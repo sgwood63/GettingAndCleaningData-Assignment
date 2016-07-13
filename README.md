@@ -53,10 +53,10 @@ Detailed documentation is in the `run_analysis.R` script.
 
 * getUCI_HAR_DataTable
 
-  ** Produces the "tidy" data table for UCI HAR test or train data
-  ** called by getFull_UCI_HAR_DataTable
-  ** Loads data files, merges with reference and other data
-  ** Reduces columns of observation columns to mean and std (standard deviation) only
+  * Produces the "tidy" data table for UCI HAR test or train data
+  * called by getFull_UCI_HAR_DataTable
+  * Loads data files, merges with reference and other data
+  * Reduces columns of observation columns to mean and std (standard deviation) only
 
 
 ### Script
