@@ -41,22 +41,22 @@ Detailed documentation is in the `run_analysis.R` script.
 
 * getFull_UCI_HAR_DataTable
 
-Produces the full Data Table for the Assignment.
-Loads reference data - activity types, observation -> subject id, feature (metric) types in observations
-Executes getUCI_HAR_DataTable for "tidy" test and train data sets
-Returns merged result
+** Produces the full Data Table for the Assignment
+** Loads reference data - activity types, observation -> subject id, feature (metric) types in observations
+** Executes getUCI_HAR_DataTable for "tidy" test and train data sets
+** Returns merged result
 
 * getUCI_HAR_SubjectActivitySummaryDataTable
 
-Uses the result
-Produces The UCI HAR data set, summarized by subjectId and activity type
+** Uses the result
+**Produces The UCI HAR data set, summarized by subjectId and activity type
 
 * getUCI_HAR_DataTable
 
-Produces the "tidy" data table for UCI HAR test or train data
-called by getFull_UCI_HAR_DataTable
-Loads data files, merges with reference and other data
-Reduces columns of observation columns to mean and std (standard deviation) only
+** Produces the "tidy" data table for UCI HAR test or train data
+** called by getFull_UCI_HAR_DataTable
+** Loads data files, merges with reference and other data
+** Reduces columns of observation columns to mean and std (standard deviation) only
 
 
 ### Script
@@ -64,7 +64,7 @@ Reduces columns of observation columns to mean and std (standard deviation) only
 Executed when `run_analysis.R` is loaded (source("run_analysis.R"))
 
 * Downloads source data from InterWeb and unzips it
-* Executes getFull_UCI_HAR_DataTable and getUCI_HAR_SubjectActivitySummaryDataTable functions
+* Executes getFull_UCI_HAR_DataTable and getUCI_HAR_SubjectActivitySummaryDataTable functions against the downloaded data
 * Creates CSV files as output: into data/output
 
 ### Variables left in Global Environment
