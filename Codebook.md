@@ -23,38 +23,38 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 For each record contains:
 =========================
 
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-- Triaxial Angular velocity from the gyroscope. 
-- A 561-feature vector with time and frequency domain variables. 
-- Its activity label. 
-- An identifier of the subject who carried out the experiment.
+* Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+* Triaxial Angular velocity from the gyroscope. 
+* A 561-feature vector with time and frequency domain variables. 
+* Its activity label. 
+* An identifier of the subject who carried out the experiment.
 
 The downloaded dataset includes the following files:
 ====================================================
 
-- 'README.txt'
+* 'README.txt'
 
-- 'features_info.txt': Shows information about the variables used on the feature vector.
+* 'features_info.txt': Shows information about the variables used on the feature vector.
 
-- 'features.txt': List of all features.
+* 'features.txt': List of all features.
 
-- 'activity_labels.txt': Links the class labels with their activity name.
+* 'activity_labels.txt': Links the class labels with their activity name.
 
 The following files are available for the train data. There are equivalent files for the 'test' data. 
 
-- 'train/X_train.txt': Training results for all features.
+* 'train/X_train.txt': Training results for all features.
 
-- 'train/y_train.txt': Training labels.
+* 'train/y_train.txt': Training labels.
 
-- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+* 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
-- 'train/Inertial Signals': directory of data used to generate the features. The files in the Inertial Signals directories are summarized in the test/train directories and do not need to be processed.
+* 'train/Inertial Signals': directory of data used to generate the features. The files in the Inertial Signals directories are summarized in the test/train directories and do not need to be processed.
 
 
 Data Notes: 
 ===========
-- Features are normalized and bounded within [-1,1].
-- Each feature vector is a row on the text file.
+* Features are normalized and bounded within [-1,1].
+* Each feature vector is a row on the text file.
 
 ## Data License
 
@@ -68,11 +68,12 @@ Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012
 
 ## Processing
 
-### 1. Merges the training and the test sets to create one data set and 3. Uses descriptive activity names to name the activities in the data set
+### 1. Merges the training and the test sets to create one data set and
+### 3. Uses descriptive activity names to name the activities in the data set
 
-subject_{test | train}.txt: row # = observation id, value = subject id for that observation id
-y_{test | train}.txt: row # = observation id, value = id of activity (in activity_labels.txt) for that observation id
-X_{test | train}.txt: row # = observation id, values = 561 features for that observation id
+* subject_{test | train}.txt: row # = observation id, value = subject id for that observation id
+* y_{test | train}.txt: row # = observation id, value = id of activity (in activity_labels.txt) for that observation id
+* X_{test | train}.txt: row # = observation id, values = 561 features for that observation id
 
 Consolidate across the 3 files for test and train, and then consolidate into a data.table labeling each row as:
 * row id
