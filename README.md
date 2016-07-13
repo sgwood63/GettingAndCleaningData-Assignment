@@ -47,9 +47,8 @@ Detailed documentation is in the `run_analysis.R` script.
 ** Returns merged result
 
 * getUCI_HAR_SubjectActivitySummaryDataTable
-
 ** Uses the result
-**Produces The UCI HAR data set, summarized by subjectId and activity type
+** Produces The UCI HAR data set, summarized by subjectId and activity type
 
 * getUCI_HAR_DataTable
 
