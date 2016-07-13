@@ -173,6 +173,8 @@ getUCI_HAR_DataTable <- function(directory, activityLabels, featuresColNames, fe
 
 #####################################################
 
+# get zip from InterWeb
+
 dataSetURL <- 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
 dataDirectory <- 'data'
 
@@ -182,6 +184,8 @@ if (!dir.exists(dataDirectory)) {
 
 dataSetZip <- 'UCI_HAR_DataSet.zip'
 dataSetFullPath <- paste0(dataDirectory, '/', dataSetZip)
+
+# unzip it
 
 if (!file.exists(dataSetFullPath)) {
   download.file(dataSetURL, destfile=dataSetFullPath)
@@ -200,20 +204,27 @@ if (!dir.exists(datasetDirectory)) {
   print(paste('used exising UCI HAR dataset directory at', datasetDirectory))
 }
 
-UCI_HAR_DataTable <- getFull_UCI_HAR_DataTable(datasetDirectory)
-print("Generated detailed UCI HAR Data Table")
-
-UCI_HAR_Subject_Activity <- getUCI_HAR_SubjectActivitySummaryDataTable(UCI_HAR_DataTable)
-print("Generated Subject and Activity summary UCI HAR Data Table")
-
 outputDirectory <- paste0(dataDirectory,'/output')
 
 if (!dir.exists(outputDirectory)) {
   dir.create(outputDirectory, recursive = TRUE)
 }
+
+# process the train and test data
+
+UCI_HAR_DataTable <- getFull_UCI_HAR_DataTable(datasetDirectory)
+print("Generated detailed UCI HAR Data Table")
+
+# save it to CSV
+
 UCI_HAR_DataTableCSV <- paste0(outputDirectory, '/UCI_HAR_tidy.csv')
 write.csv(UCI_HAR_DataTable, file=UCI_HAR_DataTableCSV)
 print(paste("Generated detailed UCI HAR Data Table CSV: ", UCI_HAR_DataTableCSV))
+
+# summarize by subject and activity
+
+UCI_HAR_Subject_Activity <- getUCI_HAR_SubjectActivitySummaryDataTable(UCI_HAR_DataTable)
+print("Generated Subject and Activity summary UCI HAR Data Table")
 
 UCI_HAR_SummaryDataTableCSV <- paste0(outputDirectory, '/UCI_HAR_SubjectAcivity_Summary.csv')
 write.csv(UCI_HAR_Subject_Activity, file=UCI_HAR_SummaryDataTableCSV)
